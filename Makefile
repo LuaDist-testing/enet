@@ -1,6 +1,10 @@
-enet.so: enet.c
-	luarocks make --local enet-dev-1.rockspec
+all: enet.so docs/index.html
 
-enet.dll: enet.c
-	gcc -O2 -shared -o $@ $< -lenet -llua5.1 -lws2_32 -lwinmm
+enet.so: enet.c
+	luarocks make --local
+
+docs/index.html: README.md
+	mkdir -p docs
+	markdown $< -o $@
+
 

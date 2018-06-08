@@ -1,16 +1,8 @@
--- This file was automatically generated for the LuaDist project.
-
 package = "enet"
 version = "1.0-0"
--- LuaDist source
 source = {
-  tag = "1.0-0",
-  url = "git://github.com/LuaDist-testing/enet.git"
+	url = "git://github.com/leafo/lua-enet.git"
 }
--- Original source
--- source = {
--- 	url = "git://github.com/leafo/lua-enet.git"
--- }
 description = {
 	summary = "A library for doing network communication in Lua",
 	detailed = [[

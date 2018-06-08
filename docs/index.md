@@ -8,7 +8,7 @@ To get an idea of how ENet works and what it provides have a look at
 [Features and Achritecture](http://enet.bespin.org/Features.html) from the
 original documentation.
 
-[TOC]
+<div class="index">$index</div>
 
 <a name="install"></a>
 ## Download & Install
@@ -33,7 +33,7 @@ Otherwise you can download the source can from GitHub:
 
 Prebuilt binaries are provided:  
 
-Download <http://leafo.net/lua-enet/bin/lua-enet-1.0.zip>.  
+Download <http://leafo.net/lua-enet/bin/lua-enet-1.1.zip>.  
 Unzip and install alongside your Lua installation.
 
 <a name="tutorial"></a>
@@ -91,10 +91,10 @@ while not done do
     end
   end
 end
-```
 
 server:disconnect()
 host:flush()
+```
 
 Upon receiving the connect message we send `"hello world"` to the server, then
 wait for the response.
@@ -202,6 +202,12 @@ stores all peers in an array of the corresponding host and re-uses unused
 peers for new connections. You can query the state of a peer using 
 [peer:state](#peerstate).
 
+### `host:get_socket_address()`
+
+Returns a string that describes the socket address of the given host. The
+string is formatted as "a.b.c.d:port", where "a.b.c.d" is the ip address of
+the used socket.
+
 ### `peer:connect_id()`
 
 Returns the field ENetPeer::connectID that is assigned for each
@@ -267,17 +273,17 @@ arrive. Defaults to reliable.
 Returns the state of the peer as a string. This can be any of the
 following:
 
- * "disconnected"
- * "connecting"
- * "acknowledging_connect"
- * "connection_pending"
- * "connection_succeeded"
- * "connected"
- * "disconnect_later"
- * "disconnecting"
- * "acknowledging_disconnect"
- * "zombie"
- * "unknown"
+ * `"disconnected"`
+ * `"connecting"`
+ * `"acknowledging_connect"`
+ * `"connection_pending"`
+ * `"connection_succeeded"`
+ * `"connected"`
+ * `"disconnect_later"`
+ * `"disconnecting"`
+ * `"acknowledging_disconnect"`
+ * `"zombie"`
+ * `"unknown"`
 
 ### `peer:receive()`
 
@@ -336,7 +342,7 @@ See official ENet documentation for detailed description.
 <a name="license"></a>
 ## License (MIT)
 
-    Copyright (C) 2011 by Leaf Corcoran
+    Copyright (C) 2014 by Leaf Corcoran
     
     Permission is hereby granted, free of charge, to any person obtaining a copy
     of this software and associated documentation files (the "Software"), to deal
